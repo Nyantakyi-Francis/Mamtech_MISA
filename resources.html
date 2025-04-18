@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>MISA | Resources</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #003366;
+            --accent-orange: #FF6600;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+            padding: 2rem 0;
+        }
+
+        header {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 1.5rem 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .logo-text h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            margin-left: 1.5rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .resources-header {
+            text-align: center;
+            padding: 3rem 0 2rem;
+            background-color: #e8f0fa;
+        }
+
+        .resources-header h1 {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+        }
+
+        .resources-header p {
+            color: #333;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .resource-card {
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .resource-category {
+            font-weight: bold;
+            color: var(--accent-orange);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .resource-list {
+            list-style: none;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .resource-item {
+            margin-bottom: 0.75rem;
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .resource-item:before {
+            content: "•";
+            color: var(--primary-blue);
+            font-weight: bold;
+            position: absolute;
+            left: -1rem;
+        }
+
+        .resource-link {
+            color: var(--primary-blue);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .resource-link:hover {
+            color: var(--accent-orange);
+            text-decoration: underline;
+        }
+
+        .faq-section {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-top: 3rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 1.5rem;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .faq-question {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            display: none;
+            padding-top: 0.5rem;
+            color: #555;
+        }
+
+        .faq-answer.show {
+            display: block;
+        }
+
+        .faq-toggle {
+            background: none;
+            border: none;
+            color: var(--accent-orange);
+            font-size: 1.25rem;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .social-links a {
+            color: var(--white);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-orange);
+            transform: scale(1.1);
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .resources-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <nav>
+            <div class="logo">
+                <img src="images/logo.png" alt="MISA Logo">
+                <div class="logo-text">
+                    <h1>MISA</h1>
+                </div>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="events.html">Events</a>
+                <a href="resources.html">Resources</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<section class="resources-header">
+    <div class="container">
+        <h1>Academic Resources</h1>
+        <p>Curated tools and materials to support your studies in Mathematics and ICT</p>
+    </div>
+</section>
+
+<main class="container">
+    <h2 class="section-title">Quick Access Resources</h2>
+    <div class="resources-grid">
+        <!-- Maths -->
+        <div class="resource-card">
+            <div class="resource-category">
+                <i class="fas fa-square-root-alt"></i> Mathematics
+            </div>
+            <ul class="resource-list">
+                <li class="resource-item"><a href="https://www.wolframalpha.com/" class="resource-link" target="_blank">Wolfram Alpha</a> – Computational intelligence</li>
+                <li class="resource-item"><a href="https://www.geogebra.org/" class="resource-link" target="_blank">GeoGebra</a> – Graphing & geometry</li>
+                <li class="resource-item"><a href="https://mathsgenie.co.uk/exampapers.html" class="resource-link" target="_blank">Exam Tips & Study Guides</a></li>
+                <li class="resource-item"><a href="https://www.savemyexams.co.uk/" class="resource-link" target="_blank">Formula & Cheat Sheets</a></li>
+                <li class="resource-item"><a href="https://revisionmaths.com/level-revision/past-papers" class="resource-link" target="_blank">Past Exam Papers</a></li>
+            </ul>
+        </div>
+
+        <!-- ICT -->
+        <div class="resource-card">
+            <div class="resource-category">
+                <i class="fas fa-laptop-code"></i> Information Technology
+            </div>
+            <ul class="resource-list">
+                <li class="resource-item"><a href="https://leetcode.com/" class="resource-link" target="_blank">LeetCode</a> – Coding challenges</li>
+                <li class="resource-item"><a href="https://www.freecodecamp.org/" class="resource-link" target="_blank">Free Coding Tutorials</a></li>
+                <li class="resource-item"><a href="https://github.com/florinpop17/app-ideas" class="resource-link" target="_blank">Project Ideas</a></li>
+                <li class="resource-item"><a href="https://code.visualstudio.com/" class="resource-link" target="_blank">Development Tools</a></li>
+                <li class="resource-item"><a href="https://roadmap.sh/" class="resource-link" target="_blank">ICT Career Guidance</a></li>
+            </ul>
+        </div>
+
+        <!-- General -->
+        <div class="resource-card">
+            <div class="resource-category">
+                <i class="fas fa-graduation-cap"></i> Study Support
+            </div>
+            <ul class="resource-list">
+                <li class="resource-item"><a href="https://todoist.com/" class="resource-link" target="_blank">Time Management Tools</a></li>
+                <li class="resource-item"><a href="https://evernote.com/templates" class="resource-link" target="_blank">Note-Taking Templates</a></li>
+                <li class="resource-item"><a href="https://www.scribbr.com/methodology/research-methodology/" class="resource-link" target="_blank">Research Guides</a></li>
+                <li class="resource-item"><a href="https://www.grammarly.com/blog/academic-writing/" class="resource-link" target="_blank">Writing Resources</a></li>
+                <li class="resource-item"><a href="https://www.slidescarnival.com/" class="resource-link" target="_blank">Presentation Skills</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="faq-section">
+        <h2 class="section-title">Resources FAQ</h2>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(1)">
+                <span>What are the best resources for preparing for maths exams?</span>
+                <button class="faq-toggle">+</button>
+            </div>
+            <div class="faq-answer" id="answer1">
+                Use platforms like <a href="https://www.wolframalpha.com/" target="_blank">Wolfram Alpha</a>, <a href="https://mathsgenie.co.uk/exampapers.html" target="_blank">Maths Genie</a>, and practice with past papers. Combine with formula sheets and timed practice for best results.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(2)">
+                <span>How can I access past exam papers for ICT courses?</span>
+                <button class="faq-toggle">+</button>
+            </div>
+            <div class="faq-answer" id="answer2">
+                Visit your institution’s portal, the MISA resource page, or check with your department. You can also find official past papers on <a href="https://www.ocr.org.uk/qualifications/" target="_blank">OCR</a> or similar boards.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(3)">
+                <span>Are there any recommended free coding platforms for beginners?</span>
+                <button class="faq-toggle">+</button>
+            </div>
+            <div class="faq-answer" id="answer3">
+                Yes! <a href="https://www.freecodecamp.org/" target="_blank">freeCodeCamp</a>, <a href="https://www.codecademy.com/" target="_blank">Codecademy</a>, and <a href="https://www.sololearn.com/" target="_blank">SoloLearn</a> are great places to start learning coding for free.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(4)">
+                <span>Where can I find additional learning materials for advanced mathematics?</span>
+                <button class="faq-toggle">+</button>
+            </div>
+            <div class="faq-answer" id="answer4">
+                Explore <a href="https://ocw.mit.edu/courses/mathematics/" target="_blank">MIT OCW</a>, <a href="https://www.khanacademy.org/math" target="_blank">Khan Academy</a>, and <a href="https://arxiv.org/" target="_blank">arXiv.org</a> for deeper mathematical concepts and papers.
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <p class="copyright">&copy; 2025 Maths & ICT Student Association. All rights reserved <br> Contacts: 055 817 9986 / 059 571 5528.</p>
+            <div class="social-links">
+                <a href="https://www.tiktok.com/@maths_ict_students" target="_blank" aria-label="Our TikTok page"><i class="fab fa-tiktok"></i></a>
+                <a href="mailto:mathsictstudentsassociation@gmail.com" aria-label="Email us"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    function toggleAnswer(id) {
+        const answer = document.getElementById(`answer${id}`);
+        const toggle = event.currentTarget.querySelector('.faq-toggle');
+        answer.classList.toggle('show');
+        toggle.textContent = answer.classList.contains('show') ? '−' : '+';
+    }
+</script>
+</body>
+</html>

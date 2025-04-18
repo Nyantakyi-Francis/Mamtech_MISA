@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About MISA - Maths & ICT Student Association</title>
+    <style>
+        /* Consistent with main site styling */
+        :root {
+            --primary-blue: #2A5C99;
+            --secondary-blue: #1a3a6b;
+            --accent-orange: #FF7D33;
+            --light-gray: #f8f9fa;
+            --white: #ffffff;
+            --dark-text: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--light-gray);
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        /* Header Styles (consistent with main site) */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo img {
+            height: 2.5rem;
+        }
+
+        .logo-text h1 {
+            font-size: 1.25rem;
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-orange);
+        }
+
+        /* About Page Specific Styles */
+        .about-header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .about-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            color: var(--primary-blue);
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-orange);
+        }
+
+        .mission-card, .membership-card, .leadership-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .mission-item, .membership-item, .leadership-item {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .mission-item:before, .membership-item:before {
+            content: "•";
+            color: var(--accent-orange);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .leader-card {
+            background-color: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 6px;
+            border-left: 4px solid var(--accent-orange);
+        }
+
+        .leader-title {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .leader-duties {
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .leader-duties li {
+            margin-bottom: 0.3rem;
+            list-style-type: none;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+
+        .leader-duties li:before {
+            content: "→";
+            color: var(--accent-orange);
+            position: absolute;
+            left: 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .social-links a {
+            color: var(--white);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-orange);
+            transform: scale(1.1);
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .about-header h1 {
+                font-size: 2rem;
+            }
+            
+            .leadership-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="images/logo.png" alt="MISA Logo">
+                    <div class="logo-text">
+                        <h1>MISA</h1>
+                    </div>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="#about">About</a>
+                    <a href="events.html">Events</a>
+                    <a href="resources.html">Resources</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- About Header -->
+    <section class="about-header">
+        <div class="container">
+            <h1>About MISA</h1>
+            <p>Mathematics and ICT Students' Association - Mampong Technical College of Education</p>
+        </div>
+    </section>
+
+    <!-- Main About Content -->
+    <main class="container">
+        <!-- Mission Section -->
+        <section class="mission-card">
+            <h2 class="section-title">Our Mission & Purpose</h2>
+            <div class="mission-item">To promote and protect the educational interest and welfare of members</div>
+            <div class="mission-item">To create awareness on the importance of using ICT in teaching and learning Mathematics</div>
+            <div class="mission-item">To help members understand the basics in ICT</div>
+            <div class="mission-item">To organize educational forums and professional development activities</div>
+            <div class="mission-item">To facilitate fundraising for association initiatives</div>
+        </section>
+
+        <!-- Membership Section -->
+        <section class="membership-card">
+            <h2 class="section-title">Membership</h2>
+            <div class="membership-item">All Maths and ICT department students are automatic members</div>
+            <div class="membership-item">The H.O.D of Mathematics and ICT serves as patron</div>
+            <div class="membership-item">Non-department students may join as associate members</div>
+            <div class="membership-item">Leaders must be level 200+ students with minimum 3.0 GPA</div>
+
+        </section>
+
+        <!-- Leadership Section -->
+        <section class="leadership-card">
+            <h2 class="section-title">Association Leadership</h2>
+            <p>MISA is managed by elected student leaders who meet twice monthly. Key leadership positions include:</p>
+            
+            <div class="leadership-grid">
+                <div class="leader-card">
+                    <h3 class="leader-title">President</h3>
+                    <ul class="leader-duties">
+                        <li>Chief executive officer of MISA</li>
+                        <li>Presides over all general meetings</li>
+                        <li>Signatory to official documents and bank accounts</li>
+                    </ul>
+                </div>
+                
+                <div class="leader-card">
+                    <h3 class="leader-title">Vice President</h3>
+                    <ul class="leader-duties">
+                        <li>Acts in the President's absence</li>
+                        <li>Supports committee chairmen</li>
+                        <li>Performs executive-assigned duties</li>
+                    </ul>
+                </div>
+                
+                <div class="leader-card">
+                    <h3 class="leader-title">General Secretary</h3>
+                    <ul class="leader-duties">
+                        <li>Maintains official records and minutes</li>
+                        <li>Manages association correspondence</li>
+                        <li>Performs administrative duties</li>
+                    </ul>
+                </div>
+                
+                <div class="leader-card">
+                    <h3 class="leader-title">Financial Secretary</h3>
+                    <ul class="leader-duties">
+                        <li>Maintains financial systems</li>
+                        <li>Prepares financial statements</li>
+                        <li>Bank account signatory</li>
+                    </ul>
+                </div>
+                
+                <div class="leader-card">
+                    <h3 class="leader-title">Treasurer</h3>
+                    <ul class="leader-duties">
+                        <li>Records all financial transactions</li>
+                        <li>Manages association funds</li>
+                        <li>Maintains financial documentation</li>
+                    </ul>
+                </div>
+                
+                <div class="leader-card">
+                    <h3 class="leader-title">Organizing Secretary</h3>
+                    <ul class="leader-duties">
+                        <li>Coordinates meetings and events</li>
+                        <li>Plans social functions</li>
+                        <li>Manages logistics</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p class="copyright">&copy; 2025 Maths & ICT Student Association. All rights reserved. <br> Contacts: 055 817 9986 / 059 571 5528.</p>
+                <div class="social-links">
+                    <a href="https://www.tiktok.com/@maths_ict_students" target="_blank" aria-label="Our TikTok page"><i class="fab fa-tiktok"></i></a>
+                    <a href="mailto:mathsictstudentsassociation@gmail.com" aria-label="Email us"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
