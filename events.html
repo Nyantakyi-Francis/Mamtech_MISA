@@ -263,10 +263,14 @@
         }
 
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        background-color: var(--primary-blue);
+        padding: 1rem;
+    }
+}
             .countdown {
                 gap: 0.75rem;
             }
